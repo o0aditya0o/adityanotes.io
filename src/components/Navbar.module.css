@@ -1,71 +1,95 @@
 .navbar {
-    position: sticky;
+    position: fixed;
+    /* Fix to top */
     top: 0;
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-color);
+    left: 0;
+    width: 100%;
     z-index: 100;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(245, 245, 244, 0.85);
+    /* Warm Stone with alpha */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(231, 229, 228, 0.5);
+    /* Subtle border */
+    transition: all 0.3s ease;
 }
 
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
+    /* Fixed height for consistency */
 }
 
 .logo {
+    font-family: var(--font-serif);
     font-size: var(--font-size-lg);
-    font-weight: 700;
+    font-weight: 500;
     color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .navLinks {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     list-style: none;
+    align-items: center;
 }
 
 .navLinks a {
     color: var(--text-secondary);
-    font-weight: 500;
+    font-family: var(--font-sans);
     font-size: var(--font-size-base);
+    font-weight: 400;
     transition: color var(--transition-speed);
     position: relative;
+    padding: 4px 0;
 }
 
 .navLinks a:hover {
     color: var(--text-primary);
-    opacity: 1;
 }
 
 .navLinks a.active {
     color: var(--text-primary);
-    font-weight: 600;
 }
 
-.navLinks a.active::after {
+/* Magnetic underline that only appears on hover/active */
+.navLinks a::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: 0px;
     left: 0;
-    right: 0;
-    height: 2px;
+    width: 100%;
+    height: 1px;
     background-color: var(--text-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s var(--transition-ease);
+}
+
+.navLinks a:hover::after,
+.navLinks a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
-        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
+        height: 60px;
     }
 
     .navLinks {
-        gap: var(--spacing-md);
-        font-size: var(--font-size-sm);
+        gap: var(--spacing-sm);
+    }
+
+    .logo {
+        font-size: var(--font-size-base);
     }
 }

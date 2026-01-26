@@ -1,95 +1,112 @@
 .postList {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
+    /* Tighter list */
 }
 
 .postCard {
     display: block;
-    padding: var(--spacing-lg);
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+    padding: var(--spacing-md) 0;
+    /* Vertical breathing room, no horizontal padding */
+    border-bottom: 1px solid var(--border-color);
     transition: all var(--transition-speed);
-    border-left: 4px solid transparent;
+    text-decoration: none;
+    position: relative;
+    background: transparent;
+    border-radius: 0;
+    border-left: none;
+    /* Reset old styles */
+}
+
+.postCard:last-child {
+    border-bottom: none;
 }
 
 .postCard:hover {
-    transform: translateX(4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    opacity: 1;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
 }
 
 .postHeader {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: baseline;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
 }
 
 .postTitle {
+    font-family: var(--font-serif);
     font-size: var(--font-size-xl);
-    font-weight: 700;
+    font-weight: 400;
     margin: 0;
+    color: var(--text-primary);
+    transition: color var(--transition-speed);
+}
+
+.postCard:hover .postTitle {
+    color: var(--text-secondary);
+    /* Subtle interaction */
 }
 
 .postDate {
-    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    color: var(--text-tertiary);
     font-size: var(--font-size-sm);
     white-space: nowrap;
     flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
 }
 
 .postExcerpt {
+    font-family: var(--font-sans);
     color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
     line-height: 1.6;
+    max-width: 65ch;
+    font-size: 1rem;
 }
 
 .readMore {
-    color: var(--text-secondary);
     font-size: var(--font-size-sm);
-    font-weight: 600;
-    transition: all var(--transition-speed);
+    font-weight: 500;
+    color: var(--text-primary);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s var(--transition-ease);
+    display: inline-block;
 }
 
 .postCard:hover .readMore {
-    color: var(--text-primary);
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .emptyState {
     text-align: center;
     padding: var(--spacing-2xl);
     color: var(--text-secondary);
+    font-family: var(--font-serif);
+    font-size: var(--font-size-lg);
+    font-style: italic;
 }
 
-/* Color variations */
-.work {
-    border-left-color: var(--color-work);
-}
+/* Color variations - Subtle text accent on hover? Or just remove entirely for purity. 
+   Let's keep them as mostly vestigial or use them for the Read More link if we want.
+   For now, we override the old colored borders to do nothing or be very subtle. */
 
-.work:hover {
-    border-left-color: var(--color-work);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
-}
-
-.life {
-    border-left-color: var(--color-life);
-}
-
-.life:hover {
-    border-left-color: var(--color-life);
-    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.1);
-}
-
+.work,
+.life,
 .books {
-    border-left-color: var(--color-books);
+    border-left: none;
 }
 
+.work:hover,
+.life:hover,
 .books:hover {
-    border-left-color: var(--color-books);
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
+    box-shadow: none;
 }
 
 /* Responsive */
@@ -97,9 +114,13 @@
     .postHeader {
         flex-direction: column;
         gap: var(--spacing-xs);
+        align-items: flex-start;
     }
 
     .postDate {
-        white-space: normal;
+        order: -1;
+        /* Date above title on mobile sometimes looks nice, or keep below. Let's keep below for now */
+        order: 0;
+        margin-bottom: 4px;
     }
 }

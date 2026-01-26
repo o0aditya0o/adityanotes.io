@@ -1,38 +1,67 @@
 /* ========== CSS Variables ========== */
 :root {
-  /* Color Palette */
-  --bg-primary: #F9F9F9;
-  --bg-secondary: #FFFFFF;
-  --text-primary: #2D2D2D;
-  --text-secondary: #6B6B6B;
-  --color-work: #3B82F6;
-  --color-life: #EC4899;
-  --color-books: #F59E0B;
-  --border-color: #E5E5E5;
-  
+  /* Color Palette - Warm Stone Theme */
+  --bg-primary: #F5F5F4;
+  /* Stone 100 */
+  --bg-secondary: #E7E5E4;
+  /* Stone 200 - for borders/accents */
+  --bg-card: #FAFAF9;
+  /* Stone 50 */
+
+  --text-primary: #1C1917;
+  /* Stone 900 */
+  --text-secondary: #57534E;
+  /* Stone 600 */
+  --text-tertiary: #A8A29E;
+  /* Stone 400 */
+
+  /* Minimal Accent Colors (Desaturated) */
+  --color-work: #475569;
+  /* Slate 600 */
+  --color-life: #9F1239;
+  /* Rose 800 (Muted) */
+  --color-books: #92400E;
+  /* Amber 800 (Muted) */
+
+  --border-color: #E7E5E4;
+  /* Stone 200 */
+
   /* Typography */
-  --font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
-  --font-size-base: 16px;
-  --font-size-sm: 0.875rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.5rem;
-  --font-size-2xl: 2rem;
-  --font-size-3xl: 2.5rem;
-  --line-height-base: 1.6;
-  --line-height-heading: 1.2;
-  
+  --font-serif: var(--font-serif);
+  /* Playfair Display */
+  --font-sans: var(--font-sans);
+  /* Inter */
+
+  --font-size-base: 18px;
+  /* Slightly larger for reading */
+  --font-size-sm: 0.95rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.75rem;
+  --font-size-2xl: 2.5rem;
+  --font-size-3xl: 4rem;
+  /* Massive Hero */
+  --font-size-mammoth: 6rem;
+
+  --line-height-base: 1.75;
+  /* Relaxed reading */
+  --line-height-heading: 1.1;
+  /* Tight headings */
+
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
-  
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
+  --spacing-2xl: 8rem;
+
   /* Layout */
-  --max-width: 1200px;
-  --border-radius: 8px;
-  --transition-speed: 0.2s;
+  --max-width: 1400px;
+  /* Wider canvas */
+  --border-radius-sm: 4px;
+  --border-radius-md: 12px;
+  --transition-speed: 0.3s;
+  --transition-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ========== CSS Reset ========== */
@@ -44,10 +73,11 @@
 
 html {
   font-size: var(--font-size-base);
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-sans), sans-serif;
   line-height: var(--line-height-base);
   color: var(--text-primary);
   background-color: var(--bg-primary);
@@ -56,14 +86,23 @@ body {
 }
 
 /* ========== Typography ========== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif), serif;
   line-height: var(--line-height-heading);
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: var(--spacing-sm);
+  letter-spacing: -0.02em;
 }
 
 h1 {
   font-size: var(--font-size-3xl);
+  font-weight: 400;
+  /* Serif elegance */
 }
 
 h2 {
@@ -75,7 +114,9 @@ h3 {
 }
 
 p {
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  max-width: 70ch;
+  /* Optimal reading length */
 }
 
 a {
@@ -93,14 +134,4 @@ a:hover {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
-}
-
-/* ========== Responsive ========== */
-@media (max-width: 768px) {
-  :root {
-    --font-size-3xl: 2rem;
-    --font-size-2xl: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-2xl: 3rem;
-  }
 }

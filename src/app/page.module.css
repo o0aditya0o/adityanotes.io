@@ -1,47 +1,75 @@
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: var(--spacing-2xl) var(--spacing-md);
+    padding: 0 var(--spacing-md);
+    padding-top: 120px;
+    /* Offset for fixed navbar */
 }
 
 .hero {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .heroTitle {
     font-size: var(--font-size-3xl);
+    line-height: 1;
     margin-bottom: var(--spacing-md);
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: -0.04em;
+    max-width: 16ch;
 }
 
+/* Make "Notes" italic or distinct if we want, but for now keep clean */
+
 .heroSubtitle {
-    font-size: var(--font-size-lg);
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    /* Specific visual weight */
     color: var(--text-secondary);
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
     line-height: 1.6;
+    font-weight: 400;
 }
 
 .sectionsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(12, 1fr);
+    /* 12 column grid */
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-2xl);
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .heroTitle {
+        font-size: 3.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .container {
+        padding-top: 100px;
+    }
+
     .hero {
-        padding: var(--spacing-xl) 0;
+        padding: var(--spacing-lg) 0;
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .heroTitle {
+        font-size: 2.5rem;
     }
 
     .sectionsGrid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: var(--spacing-md);
     }
 }

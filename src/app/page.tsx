@@ -5,34 +5,42 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <section className={styles.hero}>
-        <h1 className={styles.heroTitle}>Welcome to Aditya Notes</h1>
+        <h1 className={styles.heroTitle}>
+          Thoughts on Work, Life, and Books
+        </h1>
         <p className={styles.heroSubtitle}>
-          Thoughts on work, life, and books — a minimal space for ideas and reflections.
+          A minimal space for ideas and reflections.
         </p>
       </section>
 
       <section className={styles.sectionsGrid}>
-        <SectionCard
-          title="On Work"
-          description="Insights on software engineering, architecture, and building scalable systems."
-          color="work"
-          icon="💼"
-          link="/work"
-        />
-        <SectionCard
-          title="On Life"
-          description="Reflections on productivity, balance, and navigating the modern world."
-          color="life"
-          icon="🌱"
-          link="/life"
-        />
-        <SectionCard
-          title="On Books"
-          description="Reviews and notes on books that shaped my thinking and perspective."
-          color="books"
-          icon="📚"
-          link="/books"
-        />
+        <div style={{ gridColumn: 'span 7' }}>
+          <SectionCard
+            title="On Work"
+            description="Engineering structure, teams, and leverage."
+            color="work"
+            icon=""
+            link="/work"
+          />
+        </div>
+        <div style={{ gridColumn: 'span 5' }}>
+          <SectionCard
+            title="On Life"
+            description="Balance & perspective."
+            color="life"
+            icon=""
+            link="/life"
+          />
+        </div>
+        <div style={{ gridColumn: 'span 12' }}>
+          <SectionCard
+            title="On Books"
+            description="Notes on what I'm reading."
+            color="books"
+            icon=""
+            link="/books"
+          />
+        </div>
       </section>
     </div>
   );
