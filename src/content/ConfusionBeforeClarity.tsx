@@ -1,7 +1,6 @@
 export default function ConfusionBeforeClarity() {
     return (
         <>
-            <h3>Most of us don’t like being confused.</h3>
             <p>
                 Not in a dramatic sense. More in a quiet, everyday way. We don’t like having too many open questions about our lives. We don’t like sitting with “I don’t know” for very long.
             </p>

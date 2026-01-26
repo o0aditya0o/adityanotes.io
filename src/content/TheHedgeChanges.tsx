@@ -1,7 +1,6 @@
 export default function TheHedgeChanges() {
     return (
         <>
-            <h3>On unlearning skill-as-safety and learning people-as-leverage</h3>
             <p>
                 As children, we’re trained to hedge with skill.
             </p>

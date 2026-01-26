@@ -1,7 +1,6 @@
 export default function SolveForMotivation() {
     return (
         <>
-            <h3>A lot of people are trying to solve the wrong problem.</h3>
             <p>
                 They’re trying to be more productive.
             </p>

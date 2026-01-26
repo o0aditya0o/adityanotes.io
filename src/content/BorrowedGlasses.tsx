@@ -1,7 +1,6 @@
 export default function BorrowedGlasses() {
     return (
         <>
-            <h3>On first-principles thinking in careers, teams, and life</h3>
             <p>
                 One of the quietest ways people give up their agency is by inheriting opinions.
             </p>
