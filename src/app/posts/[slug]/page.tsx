@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { posts } from '@/data/posts';
+import { postContent } from '@/content';
 import styles from './page.module.css';
 
 interface PageProps {
@@ -20,6 +21,8 @@ export default async function PostPage({ params }: PageProps) {
     if (!post) {
         notFound();
     }
+
+    const content = postContent[slug];
 
     const categoryColor = {
         work: 'var(--color-work)',
@@ -48,16 +51,24 @@ export default async function PostPage({ params }: PageProps) {
                 <div className={styles.content}>
                     <p className={styles.excerpt}>{post.excerpt}</p>
 
-                    <h2>Full Content Coming Soon</h2>
-                    <p>
-                        This is a placeholder for the full blog post content. In a real implementation,
-                        you would integrate a markdown renderer or CMS to display rich content here.
-                    </p>
+                    {content ? (
+                        <div className={styles.postContent}>
+                            {content}
+                        </div>
+                    ) : (
+                        <>
+                            <h2>Full Content Coming Soon</h2>
+                            <p>
+                                This is a placeholder for the full blog post content. In a real implementation,
+                                you would integrate a markdown renderer or CMS to display rich content here.
+                            </p>
 
-                    <p>
-                        For now, this demonstrates the blog post page structure with proper routing,
-                        category theming, and navigation.
-                    </p>
+                            <p>
+                                For now, this demonstrates the blog post page structure with proper routing,
+                                category theming, and navigation.
+                            </p>
+                        </>
+                    )}
                 </div>
             </article>
         </div>
