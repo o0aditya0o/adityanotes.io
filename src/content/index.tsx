@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import BuildingScalableSystems from './BuildingScalableSystems';
+import BorrowedGlasses from './BorrowedGlasses';
 
 export const postContent: Record<string, ReactNode> = {
-    'building-scalable-systems': <BuildingScalableSystems />,
+    'borrowed-glasses-dont-fit': <BorrowedGlasses />,
 };

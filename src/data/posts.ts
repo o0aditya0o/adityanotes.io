@@ -3,10 +3,10 @@ import { BlogPost } from '@/components/BlogPostList';
 export const posts: BlogPost[] = [
     // Work posts
     {
-        slug: 'building-scalable-systems',
-        title: 'Building Scalable Systems',
-        date: 'January 15, 2026',
-        excerpt: 'Lessons learned from designing and implementing distributed systems that can handle millions of users.',
+        slug: 'borrowed-glasses-dont-fit',
+        title: "Borrowed Glasses Don't Fit",
+        date: 'January 10, 2026',
+        excerpt: 'On first-principles thinking in careers, teams, and life. Why flawed opinions are better than borrowed ones.',
         category: 'work',
     },
     {
