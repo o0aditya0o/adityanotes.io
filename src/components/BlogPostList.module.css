@@ -2,31 +2,43 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
-    /* Tighter list */
 }
 
 .postCard {
     display: block;
     padding: var(--spacing-md) 0;
-    /* Vertical breathing room, no horizontal padding */
     border-bottom: 1px solid var(--border-color);
     transition: all var(--transition-speed);
     text-decoration: none;
     position: relative;
     background: transparent;
-    border-radius: 0;
-    border-left: none;
-    /* Reset old styles */
 }
 
 .postCard:last-child {
     border-bottom: none;
 }
 
-.postCard:hover {
-    transform: none;
-    box-shadow: none;
-    background: transparent;
+/* Image Styles */
+.coverImageWrapper {
+    width: 100%;
+    height: 200px;
+    /* Distinctive crop */
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--bg-secondary);
+}
+
+.coverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.postCard:hover .coverImage {
+    transform: scale(1.03);
+    /* Subtle zoom */
 }
 
 .postHeader {
@@ -48,7 +60,6 @@
 
 .postCard:hover .postTitle {
     color: var(--text-secondary);
-    /* Subtle interaction */
 }
 
 .postDate {
@@ -93,20 +104,11 @@
     font-style: italic;
 }
 
-/* Color variations - Subtle text accent on hover? Or just remove entirely for purity. 
-   Let's keep them as mostly vestigial or use them for the Read More link if we want.
-   For now, we override the old colored borders to do nothing or be very subtle. */
-
+/* Vestigial color classes override */
 .work,
 .life,
 .books {
     border-left: none;
-}
-
-.work:hover,
-.life:hover,
-.books:hover {
-    box-shadow: none;
 }
 
 /* Responsive */
@@ -117,9 +119,11 @@
         align-items: flex-start;
     }
 
+    .coverImageWrapper {
+        height: 180px;
+    }
+
     .postDate {
-        order: -1;
-        /* Date above title on mobile sometimes looks nice, or keep below. Let's keep below for now */
         order: 0;
         margin-bottom: 4px;
     }

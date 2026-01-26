@@ -8,6 +8,7 @@ export const posts: BlogPost[] = [
         date: 'January 26, 2026',
         excerpt: 'On first-principles thinking in careers, teams, and life. Why flawed opinions are better than borrowed ones.',
         category: 'work',
+        coverImage: '/images/borrowed-glasses.png',
     },
     {
         slug: 'the-hedge-changes',
@@ -15,6 +16,7 @@ export const posts: BlogPost[] = [
         date: 'January 20, 2026',
         excerpt: 'On unlearning skill-as-safety and learning people-as-leverage.',
         category: 'work',
+        coverImage: '/images/the-hedge-changes.png',
     },
     {
         slug: 'solve-for-motivation',
@@ -22,6 +24,7 @@ export const posts: BlogPost[] = [
         date: 'January 14, 2026',
         excerpt: 'Why productivity is rarely the problem and motivation is the real engine.',
         category: 'work',
+        coverImage: '/images/solve-for-motivation.png',
     },
     {
         slug: 'confusion-before-clarity',
@@ -29,6 +32,7 @@ export const posts: BlogPost[] = [
         date: 'January 07, 2026',
         excerpt: 'Why rushing to clarity often leads to poor decisions, and the value of sitting with confusion.',
         category: 'work',
+        coverImage: '/images/confusion-before-clarity.png',
     },
 
     // Life posts

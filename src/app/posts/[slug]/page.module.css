@@ -1,10 +1,8 @@
 .container {
     max-width: 1200px;
-    /* Much wider canvas */
     margin: 0 auto;
     padding: var(--spacing-2xl) var(--spacing-md);
     padding-top: 140px;
-    /* Offset for navbar */
     min-height: 90vh;
     display: flex;
     flex-direction: column;
@@ -19,7 +17,6 @@
     font-weight: 500;
     transition: all var(--transition-speed);
     align-self: flex-start;
-    /* Ensure it stays left even if other things center */
 }
 
 .backLink:hover {
@@ -29,23 +26,15 @@
 
 .article {
     background-color: var(--bg-card);
-    /* Specific card bg */
     padding: var(--spacing-2xl) 0;
-    /* Vertical padding */
     border-radius: var(--border-radius-md);
     border: 1px solid var(--border-color);
-    /* Removed heavy shadow for cleanliness */
     width: 100%;
 }
 
-/* 
-   Content Centering Strategy:
-   The article is wide, but the text inside is constrained to an optimal reading width.
-*/
 .header,
 .content {
     max-width: 720px;
-    /* Optimal reading width (~65-75ch) */
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
 }
@@ -55,7 +44,6 @@
     padding-bottom: var(--spacing-lg);
     border-bottom: 1px solid var(--border-color);
     text-align: center;
-    /* Center the header text */
 }
 
 .category {
@@ -68,10 +56,27 @@
     margin-bottom: var(--spacing-md);
 }
 
+/* Image Styles for Detail Page */
+.coverImageWrapper {
+    width: 100%;
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    /* Optional: Limit height if images are too tall, 
+       but minimal style might want them full */
+    max-height: 400px;
+}
+
+.coverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .title {
     font-family: var(--font-serif);
     font-size: 3.5rem;
-    /* Massive title */
     font-weight: 400;
     margin-bottom: var(--spacing-md);
     line-height: 1.1;
@@ -88,11 +93,8 @@
 }
 
 .content {
-    font-family: var(--font-serif);
-    /* Or Sans? "Essentialist usually likes Sans body". Prompt said Sans body. */
     font-family: var(--font-sans);
     font-size: 1.125rem;
-    /* 18px */
     line-height: 1.8;
     color: var(--text-primary);
 }
@@ -169,5 +171,9 @@
 
     .excerpt {
         font-size: 1.25rem;
+    }
+
+    .coverImageWrapper {
+        max-height: 250px;
     }
 }

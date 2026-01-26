@@ -44,6 +44,17 @@ export default async function PostPage({ params }: PageProps) {
                     >
                         {post.category.charAt(0).toUpperCase() + post.category.slice(1)}
                     </span>
+
+                    {post.coverImage && (
+                        <div className={styles.coverImageWrapper}>
+                            <img
+                                src={post.coverImage}
+                                alt=""
+                                className={styles.coverImage}
+                            />
+                        </div>
+                    )}
+
                     <h1 className={styles.title}>{post.title}</h1>
                     <time className={styles.date}>{post.date}</time>
                 </header>

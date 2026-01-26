@@ -7,6 +7,7 @@ export interface BlogPost {
     date: string;
     excerpt: string;
     category: 'work' | 'life' | 'books';
+    coverImage?: string;
 }
 
 interface BlogPostListProps {
@@ -31,8 +32,17 @@ export default function BlogPostList({ posts, category }: BlogPostListProps) {
                 <Link
                     key={post.slug}
                     href={`/posts/${post.slug}`}
-                    className={`${styles.postCard} ${styles[category]}`}
+                    className={styles.postCard}
                 >
+                    {post.coverImage && (
+                        <div className={styles.coverImageWrapper}>
+                            <img
+                                src={post.coverImage}
+                                alt=""
+                                className={styles.coverImage}
+                            />
+                        </div>
+                    )}
                     <div className={styles.postHeader}>
                         <h2 className={styles.postTitle}>{post.title}</h2>
                         <time className={styles.postDate}>{post.date}</time>
