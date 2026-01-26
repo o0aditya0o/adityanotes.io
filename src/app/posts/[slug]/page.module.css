@@ -1,7 +1,13 @@
 .container {
-    max-width: 800px;
+    max-width: 1200px;
+    /* Much wider canvas */
     margin: 0 auto;
     padding: var(--spacing-2xl) var(--spacing-md);
+    padding-top: 140px;
+    /* Offset for navbar */
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .backLink {
@@ -9,88 +15,159 @@
     margin-bottom: var(--spacing-lg);
     color: var(--text-secondary);
     font-size: var(--font-size-sm);
+    font-family: var(--font-sans);
     font-weight: 500;
-    transition: color var(--transition-speed);
+    transition: all var(--transition-speed);
+    align-self: flex-start;
+    /* Ensure it stays left even if other things center */
 }
 
 .backLink:hover {
     color: var(--text-primary);
-    opacity: 1;
+    transform: translateX(-4px);
 }
 
 .article {
-    background-color: var(--bg-secondary);
-    padding: var(--spacing-2xl);
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    background-color: var(--bg-card);
+    /* Specific card bg */
+    padding: var(--spacing-2xl) 0;
+    /* Vertical padding */
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    /* Removed heavy shadow for cleanliness */
+    width: 100%;
+}
+
+/* 
+   Content Centering Strategy:
+   The article is wide, but the text inside is constrained to an optimal reading width.
+*/
+.header,
+.content {
+    max-width: 720px;
+    /* Optimal reading width (~65-75ch) */
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
 }
 
 .header {
     margin-bottom: var(--spacing-xl);
     padding-bottom: var(--spacing-lg);
     border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    /* Center the header text */
 }
 
 .category {
     display: inline-block;
-    font-size: var(--font-size-sm);
+    font-size: 0.85rem;
+    font-family: var(--font-sans);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-md);
 }
 
 .title {
-    font-size: var(--font-size-3xl);
-    font-weight: 700;
-    margin-bottom: var(--spacing-sm);
-    line-height: var(--line-height-heading);
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    /* Massive title */
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .date {
     display: block;
-    color: var(--text-secondary);
+    color: var(--text-tertiary);
+    font-family: var(--font-sans);
     font-size: var(--font-size-sm);
+    margin-top: var(--spacing-md);
 }
 
 .content {
-    font-size: var(--font-size-lg);
+    font-family: var(--font-serif);
+    /* Or Sans? "Essentialist usually likes Sans body". Prompt said Sans body. */
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    /* 18px */
     line-height: 1.8;
+    color: var(--text-primary);
+}
+
+.content h2,
+.content h3 {
+    font-family: var(--font-serif);
+    color: var(--text-primary);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 400;
 }
 
 .content h2 {
-    margin-top: var(--spacing-xl);
-    margin-bottom: var(--spacing-md);
+    font-size: 2rem;
+}
+
+.content h3 {
+    font-size: 1.5rem;
 }
 
 .content p {
     margin-bottom: var(--spacing-md);
 }
 
+.content ul,
+.content ol {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-md);
+}
+
+.content li {
+    margin-bottom: var(--spacing-xs);
+}
+
 .excerpt {
-    font-size: var(--font-size-xl);
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
     color: var(--text-secondary);
     font-style: italic;
     margin-bottom: var(--spacing-xl);
-    padding-left: var(--spacing-md);
-    border-left: 4px solid var(--border-color);
+    line-height: 1.4;
+    text-align: center;
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 2.5rem;
+    }
+}
+
 @media (max-width: 768px) {
+    .container {
+        padding-top: 100px;
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
     .article {
-        padding: var(--spacing-lg);
+        border: none;
+        background: transparent;
+        padding: 0;
+    }
+
+    .header,
+    .content {
+        padding: 0;
     }
 
     .title {
-        font-size: var(--font-size-2xl);
-    }
-
-    .content {
-        font-size: var(--font-size-base);
+        font-size: 2rem;
     }
 
     .excerpt {
-        font-size: var(--font-size-lg);
+        font-size: 1.25rem;
     }
 }
