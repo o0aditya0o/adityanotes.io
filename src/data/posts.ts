@@ -42,6 +42,7 @@ export const posts: BlogPost[] = [
         date: 'January 18, 2026',
         excerpt: 'Reflections on maintaining work-life balance while working remotely and staying productive.',
         category: 'life',
+        coverImage: '/images/projects/project-3.png', // Placeholder
     },
     {
         slug: 'morning-routines',
@@ -49,6 +50,7 @@ export const posts: BlogPost[] = [
         date: 'January 5, 2026',
         excerpt: 'How establishing a consistent morning routine transformed my productivity and mental clarity.',
         category: 'life',
+        coverImage: '/images/projects/project-2.png', // Placeholder
     },
 
     // Books posts
@@ -58,6 +60,7 @@ export const posts: BlogPost[] = [
         date: 'January 12, 2026',
         excerpt: 'A transformative book on building good habits and breaking bad ones through tiny changes.',
         category: 'books',
+        coverImage: '/images/projects/project-1.png', // Placeholder
     },
     {
         slug: 'designing-data-intensive-applications',
@@ -65,6 +68,7 @@ export const posts: BlogPost[] = [
         date: 'December 28, 2025',
         excerpt: 'An essential read for anyone working with distributed systems and databases.',
         category: 'books',
+        coverImage: '/images/projects/project-2.png', // Placeholder
     },
     {
         slug: 'deep-work-review',
@@ -72,5 +76,6 @@ export const posts: BlogPost[] = [
         date: 'December 15, 2025',
         excerpt: 'Strategies for focused success in a distracted world and cultivating deep concentration.',
         category: 'books',
+        coverImage: '/images/projects/project-3.png', // Placeholder
     },
 ];

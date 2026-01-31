@@ -8,13 +8,15 @@ interface ProjectCardProps {
     image: string;
     slug: string;
     index: number;
+    href?: string;
 }
 
-export default function ProjectCard({ title, excerpt, image, slug, index }: ProjectCardProps) {
+export default function ProjectCard({ title, excerpt, image, slug, index, href }: ProjectCardProps) {
     const isEven = index % 2 === 0;
+    const linkPath = href || `/projects/${slug}`;
 
     return (
-        <Link href={`/projects/${slug}`} className={`${styles.card} ${!isEven ? styles.cardReverse : ''}`}>
+        <Link href={linkPath} className={`${styles.card} ${!isEven ? styles.cardReverse : ''}`}>
             <div className={styles.imageWrapper}>
                 <Image
                     src={image}
@@ -27,7 +29,7 @@ export default function ProjectCard({ title, excerpt, image, slug, index }: Proj
             <div className={styles.content}>
                 <h2 className={styles.title}>{title}</h2>
                 <p className={styles.excerpt}>{excerpt}</p>
-                <span className={styles.cta}>View Project</span>
+                <span className={styles.cta}>View {href ? 'Post' : 'Project'}</span>
             </div>
         </Link>
     );

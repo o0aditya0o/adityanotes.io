@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import ProjectCard from '@/components/ProjectCard';
 import styles from './page.module.css';
 
@@ -27,13 +26,6 @@ export default function ProjectsPage() {
     return (
         <main>
             <header className={styles.header}>
-                <Image
-                    src="/images/projects/masthead.png"
-                    alt="Projects Masthead"
-                    fill
-                    className={styles.mastheadImage}
-                    priority
-                />
                 <div className={styles.overlay} />
                 <div className={styles.headerContent}>
                     <h1 className={styles.title}>Selected Projects</h1>
