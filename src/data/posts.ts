@@ -54,28 +54,29 @@ export const posts: BlogPost[] = [
     },
 
     // Books posts
+    // Books posts
     {
-        slug: 'atomic-habits-review',
-        title: 'Atomic Habits by James Clear',
-        date: 'January 12, 2026',
-        excerpt: 'A transformative book on building good habits and breaking bad ones through tiny changes.',
+        slug: 'school-of-life',
+        title: 'The School of Life: An Emotional Education',
+        date: 'January 2026',
+        excerpt: 'A guide to emotional intelligence, covering self-knowledge, relationships, work, and anxiety.',
         category: 'books',
-        coverImage: '/images/projects/project-1.png', // Placeholder
+        coverImage: '/images/books/school-of-life.jpg',
     },
     {
-        slug: 'designing-data-intensive-applications',
-        title: 'Designing Data-Intensive Applications',
-        date: 'December 28, 2025',
-        excerpt: 'An essential read for anyone working with distributed systems and databases.',
+        slug: 'four-thousand-weeks',
+        title: 'Four Thousand Weeks',
+        date: 'January 2026',
+        excerpt: 'Time management for mortals. Accepting our limited time to focus on what truly matters.',
         category: 'books',
-        coverImage: '/images/projects/project-2.png', // Placeholder
+        coverImage: '/images/books/four-thousand-weeks.jpg',
     },
     {
-        slug: 'deep-work-review',
-        title: 'Deep Work by Cal Newport',
-        date: 'December 15, 2025',
-        excerpt: 'Strategies for focused success in a distracted world and cultivating deep concentration.',
+        slug: 'statquest-ml-guide',
+        title: 'The StatQuest Illustrated Guide to Machine Learning',
+        date: 'December 2025',
+        excerpt: 'A visual and intuitive guide to understanding machine learning concepts, from basics to advanced models.',
         category: 'books',
-        coverImage: '/images/projects/project-3.png', // Placeholder
+        coverImage: '/images/books/statquest-ml.jpg',
     },
 ];
