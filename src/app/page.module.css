@@ -2,60 +2,119 @@
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 var(--spacing-md);
-    padding-top: 120px;
-    /* Offset for fixed navbar */
+    padding-top: 140px;
 }
 
 .hero {
-    text-align: center;
+    text-align: left;
+    /* Align left for terminal feel */
     margin-bottom: var(--spacing-2xl);
     padding: var(--spacing-xl) 0;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.terminalPrompt {
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-lg);
+    display: flex;
     align-items: center;
+    gap: 0.5rem;
+}
+
+.terminalPrompt::before {
+    content: '$';
+    color: var(--text-secondary);
 }
 
 .heroTitle {
     font-size: var(--font-size-3xl);
-    line-height: 1;
+    line-height: 1.2;
     margin-bottom: var(--spacing-md);
-    font-weight: 400;
+    font-weight: 700;
     color: var(--text-primary);
-    letter-spacing: -0.04em;
-    max-width: 16ch;
+    letter-spacing: -0.02em;
+    min-height: 1.2em;
+    /* Reserve space */
+    display: inline-block;
 }
 
-/* Make "Notes" italic or distinct if we want, but for now keep clean */
+/* Cursor animation style */
+.cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1em;
+    background-color: var(--text-tertiary);
+    margin-left: 0.2rem;
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
 
 .heroSubtitle {
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
-    /* Specific visual weight */
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
     color: var(--text-secondary);
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 600px;
     line-height: 1.6;
-    font-weight: 400;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 1.5s forwards;
+    /* Delay fade in after typing */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sectionsGrid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    /* 12 column grid */
     gap: var(--spacing-md);
     padding-bottom: var(--spacing-2xl);
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
+    .container {
+        padding-top: 120px;
+    }
+
     .heroTitle {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 }
 
 @media (max-width: 768px) {
     .container {
         padding-top: 100px;
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
     }
 
     .hero {
@@ -64,12 +123,17 @@
     }
 
     .heroTitle {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .sectionsGrid {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-md);
+    }
+
+    .cursor {
+        height: 0.9em;
+        /* Adjust for smaller font */
     }
 }

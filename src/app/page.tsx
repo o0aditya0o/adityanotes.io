@@ -1,12 +1,34 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import SectionCard from '@/components/SectionCard';
 import styles from './page.module.css';
 
 export default function Home() {
+  const [text, setText] = useState('');
+  const fullText = "Hi! I am Aditya";
+
+  useEffect(() => {
+    let index = 0;
+    const timeoutId = setTimeout(() => {
+      const timer = setInterval(() => {
+        setText(fullText.slice(0, index + 1));
+        index++;
+        if (index === fullText.length) clearInterval(timer);
+      }, 100);
+      return () => clearInterval(timer);
+    }, 500); // Initial delay before typing starts
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
     <div className={styles.container}>
       <section className={styles.hero}>
+        <div className={styles.terminalPrompt}>user@aditya-notes:~$ greet</div>
         <h1 className={styles.heroTitle}>
-          Hi! I am Aditya
+          {text}
+          <span className={styles.cursor}></span>
         </h1>
         <p className={styles.heroSubtitle}>
           This is my space for ideas, reflections, and experiments.

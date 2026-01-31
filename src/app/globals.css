@@ -1,54 +1,49 @@
 /* ========== CSS Variables ========== */
 :root {
-  /* Color Palette - Warm Stone Theme */
-  --bg-primary: #F5F5F4;
-  /* Stone 100 */
-  --bg-secondary: #E7E5E4;
-  /* Stone 200 - for borders/accents */
-  --bg-card: #FAFAF9;
-  /* Stone 50 */
+  /* Color Palette - Dark Terminal Theme */
+  --bg-primary: #0F0F0F;
+  /* Deep Charcoal/Black */
+  --bg-secondary: #171717;
+  /* Slightly lighter for panels */
+  --bg-card: #0F0F0F;
+  /* Same as primary to look transparent/integrated */
 
-  --text-primary: #1C1917;
-  /* Stone 900 */
-  --text-secondary: #57534E;
-  /* Stone 600 */
-  --text-tertiary: #A8A29E;
-  /* Stone 400 */
+  --text-primary: #EEFDF2;
+  /* Off-white / Matrix tint */
+  --text-secondary: #86EFAC;
+  /* Soft Green for secondary text */
+  --text-tertiary: #4ADE80;
+  /* Brighter Green for dim text/accents */
 
-  /* Minimal Accent Colors (Desaturated) */
-  --color-work: #475569;
-  /* Slate 600 */
-  --color-life: #9F1239;
-  /* Rose 800 (Muted) */
-  --color-books: #92400E;
-  --color-books: #92400E;
-  /* Amber 800 (Muted) */
-  --color-projects: #0F766E;
-  /* Teal 700 (Muted) */
+  /* Minimal Accent Colors (Terminal Palette) */
+  --color-work: #6EE7B7;
+  /* Emerald 300 */
+  --color-life: #F9A8D4;
+  /* Pink 300 (Soft contrast) */
+  --color-books: #FDBA74;
+  /* Orange 300 */
+  --color-projects: #93C5FD;
+  /* Blue 300 */
 
-  --border-color: #E7E5E4;
-  /* Stone 200 */
+  --border-color: rgba(74, 222, 128, 0.2);
+  /* Low opacity green */
+  --border-color-hover: rgba(74, 222, 128, 0.5);
 
   /* Typography */
-  --font-mono: var(--font-mono);
-  /* JetBrains Mono */
-  --font-sans: var(--font-sans);
-  /* Inter */
+  --font-mono: var(--font-mono), 'Courier New', Courier, monospace;
+  --font-sans: var(--font-mono), 'Courier New', Courier, monospace;
+  /* Force Mono everywhere */
 
-  --font-size-base: 18px;
-  /* Slightly larger for reading */
-  --font-size-sm: 0.95rem;
-  --font-size-lg: 1.25rem;
-  --font-size-xl: 1.75rem;
-  --font-size-2xl: 2.5rem;
-  --font-size-3xl: 4rem;
-  /* Massive Hero */
-  --font-size-mammoth: 6rem;
+  --font-size-base: 16px;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 3rem;
+  --font-size-mammoth: 4.5rem;
 
-  --line-height-base: 1.75;
-  /* Relaxed reading */
-  --line-height-heading: 1.1;
-  /* Tight headings */
+  --line-height-base: 1.6;
+  --line-height-heading: 1.2;
 
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -59,12 +54,13 @@
   --spacing-2xl: 8rem;
 
   /* Layout */
-  --max-width: 1400px;
-  /* Wider canvas */
-  --border-radius-sm: 4px;
-  --border-radius-md: 12px;
-  --transition-speed: 0.3s;
-  --transition-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --max-width: 1200px;
+  --border-radius-sm: 0px;
+  /* Sharp corners for terminal look */
+  --border-radius-md: 0px;
+  --transition-speed: 0.2s;
+  /* Faster for digital feel */
+  --transition-ease: ease-out;
 }
 
 /* ========== CSS Reset ========== */
@@ -80,12 +76,15 @@ html {
 }
 
 body {
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-mono);
   line-height: var(--line-height-base);
   color: var(--text-primary);
   background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+  /* Subtle scanline effect */
 }
 
 /* ========== Typography ========== */
@@ -95,17 +94,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-mono), monospace;
+  font-family: var(--font-mono);
   line-height: var(--line-height-heading);
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: var(--spacing-sm);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 h1 {
   font-size: var(--font-size-3xl);
-  font-weight: 400;
-  /* Serif elegance */
 }
 
 h2 {
@@ -118,18 +116,19 @@ h3 {
 
 p {
   margin-bottom: var(--spacing-md);
-  max-width: 70ch;
-  /* Optimal reading length */
+  max-width: 65ch;
+  color: var(--text-secondary);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: opacity var(--transition-speed);
+  transition: all var(--transition-speed);
 }
 
 a:hover {
-  opacity: 0.7;
+  color: var(--text-tertiary);
+  text-decoration: underline;
 }
 
 /* ========== Layout Utilities ========== */
@@ -137,4 +136,9 @@ a:hover {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+}
+
+/* Helper for mono utility */
+.mono {
+  font-family: var(--font-mono);
 }
