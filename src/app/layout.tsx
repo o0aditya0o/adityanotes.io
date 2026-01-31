@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { JetBrains_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const playfair = Playfair_Display({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: '--font-serif',
+  variable: '--font-mono',
   display: 'swap',
 });
 
@@ -17,8 +17,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aditya Notes - Thoughts on Work, Life, and Books",
-  description: "A minimal space for ideas and reflections on work, life, and books.",
+  title: "Aditya Notes - Work, Life, Books, & Projects",
+  description: "A minimal space for ideas, reflections, and experiments.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${inter.variable}`}>
+      <body className={`${jetbrainsMono.variable} ${inter.variable}`}>
         <Navbar />
         <main>{children}</main>
         <Footer />

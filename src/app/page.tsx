@@ -6,10 +6,10 @@ export default function Home() {
     <div className={styles.container}>
       <section className={styles.hero}>
         <h1 className={styles.heroTitle}>
-          Thoughts on Work, Life, and Books
+          Hi! I am Aditya
         </h1>
         <p className={styles.heroSubtitle}>
-          A minimal space for ideas and reflections.
+          This is my space for ideas, reflections, and experiments.
         </p>
       </section>
 
@@ -32,13 +32,22 @@ export default function Home() {
             link="/life"
           />
         </div>
-        <div style={{ gridColumn: 'span 12' }}>
+        <div style={{ gridColumn: 'span 6' }}>
           <SectionCard
             title="On Books"
             description="Notes on what I'm reading."
             color="books"
             icon=""
             link="/books"
+          />
+        </div>
+        <div style={{ gridColumn: 'span 6' }}>
+          <SectionCard
+            title="On Projects"
+            description="Selected work and experiments."
+            color="projects"
+            icon=""
+            link="/projects"
           />
         </div>
       </section>

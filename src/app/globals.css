@@ -21,14 +21,17 @@
   --color-life: #9F1239;
   /* Rose 800 (Muted) */
   --color-books: #92400E;
+  --color-books: #92400E;
   /* Amber 800 (Muted) */
+  --color-projects: #0F766E;
+  /* Teal 700 (Muted) */
 
   --border-color: #E7E5E4;
   /* Stone 200 */
 
   /* Typography */
-  --font-serif: var(--font-serif);
-  /* Playfair Display */
+  --font-mono: var(--font-mono);
+  /* JetBrains Mono */
   --font-sans: var(--font-sans);
   /* Inter */
 
@@ -92,11 +95,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-serif), serif;
+  font-family: var(--font-mono), monospace;
   line-height: var(--line-height-heading);
   font-weight: 500;
   margin-bottom: var(--spacing-sm);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 h1 {

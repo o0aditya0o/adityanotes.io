@@ -4,7 +4,7 @@ import styles from './SectionCard.module.css';
 interface SectionCardProps {
     title: string;
     description: string;
-    color: 'work' | 'life' | 'books';
+    color: 'work' | 'life' | 'books' | 'projects';
     link: string;
     icon: string;
 }
