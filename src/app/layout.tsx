@@ -15,6 +15,8 @@ export const metadata: Metadata = {
   description: "A minimal space for ideas, reflections, and experiments.",
 };
 
+import StarryBackground from "@/components/StarryBackground";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${jetbrainsMono.variable}`}>
+        <StarryBackground />
         <Navbar />
         <main>{children}</main>
         <Footer />
