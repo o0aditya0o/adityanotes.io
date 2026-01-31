@@ -8,13 +8,13 @@ export default function Footer() {
                     © {new Date().getFullYear()} Aditya. All rights reserved.
                 </p>
                 <div className={styles.socialLinks}>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/o0aditya0o" target="_blank" rel="noopener noreferrer">
                         GitHub
                     </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                        Twitter
+                    <a href="https://x.com/_aditya_agarwal" target="_blank" rel="noopener noreferrer">
+                        X
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/adityamnnit/" target="_blank" rel="noopener noreferrer">
                         LinkedIn
                     </a>
                 </div>
