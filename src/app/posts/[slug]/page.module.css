@@ -96,16 +96,24 @@
     font-family: var(--font-sans);
     font-size: 1.125rem;
     line-height: 1.8;
-    color: var(--text-primary);
+    color: #ffffff;
+    /* User requested white for readability */
 }
 
 .content h2,
 .content h3 {
     font-family: var(--font-serif);
-    color: var(--text-primary);
+    color: #ffffff;
+    /* Match content color */
     margin-top: var(--spacing-xl);
     margin-bottom: var(--spacing-sm);
     font-weight: 400;
+}
+
+.content p,
+.content li {
+    color: #ffffff;
+    /* Force white for body text */
 }
 
 .content h2 {
@@ -124,6 +132,7 @@
 .content ol {
     margin-bottom: var(--spacing-md);
     padding-left: var(--spacing-md);
+    color: #ffffff;
 }
 
 .content li {
@@ -134,6 +143,7 @@
     font-family: var(--font-serif);
     font-size: 1.5rem;
     color: var(--text-secondary);
+    /* Keep excerpt distinct or change if needed? Leaving as is for contrast */
     font-style: italic;
     margin-bottom: var(--spacing-xl);
     line-height: 1.4;
