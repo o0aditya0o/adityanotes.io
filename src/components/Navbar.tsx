@@ -53,6 +53,14 @@ export default function Navbar() {
                             Books
                         </Link>
                     </li>
+                    <li>
+                        <Link
+                            href="/projects"
+                            className={isActive('/projects') ? styles.active : ''}
+                        >
+                            Projects
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </nav>
