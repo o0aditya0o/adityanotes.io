@@ -28,6 +28,7 @@ export default function BooksPage() {
                         slug={post.slug}
                         index={index}
                         href={`/posts/${post.slug}`}
+                        variant="portrait"
                     />
                 ))}
             </div>

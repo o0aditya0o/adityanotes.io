@@ -1,0 +1,189 @@
+/* Petri Force Theme Colors */
+:root {
+    --petri-teal: #2DD4BF;
+    --petri-mint: #6EE7B7;
+    --petri-dark: #000000;
+}
+
+.main {
+    min-height: 100vh;
+    background: #000000;
+    color: #EEFDF2;
+    overflow-x: hidden;
+}
+
+.heroSection {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: var(--spacing-2xl) var(--spacing-md);
+    background: radial-gradient(circle at 50% 10%, rgba(45, 212, 191, 0.1) 0%, transparent 60%);
+}
+
+.heroTagline {
+    font-family: var(--font-mono);
+    color: var(--petri-teal);
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-md);
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.heroTitle {
+    font-family: var(--font-sans);
+    font-size: clamp(3rem, 8vw, var(--font-size-mammoth));
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(180deg, #FFFFFF 0%, #99F6E4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.2s forwards;
+}
+
+.heroSubtitle {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.4s forwards;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    width: 100%;
+    max-width: 1200px;
+    margin-top: var(--spacing-2xl);
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.8s forwards;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(45, 212, 191, 0.05);
+    border-color: var(--petri-mint);
+}
+
+.cardIcon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    display: block;
+}
+
+.cardTitle {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+.cardText {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+.section {
+    padding: var(--spacing-2xl) var(--spacing-md);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.mockupContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, #111 0%, #000 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: var(--spacing-2xl) 0;
+}
+
+.mockupText {
+    font-family: var(--font-mono);
+    color: var(--text-tertiary);
+}
+
+.buttonPrimary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--petri-teal);
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.6s forwards;
+}
+
+.buttonPrimary:hover {
+    background: var(--petri-mint);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(45, 212, 191, 0.4);
+    text-decoration: none;
+    color: #000;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .heroTitle {
+        font-size: 3rem;
+    }
+}

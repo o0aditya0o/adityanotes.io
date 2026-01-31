@@ -3,22 +3,10 @@ import styles from './page.module.css';
 
 const projects = [
     {
-        title: "Financial Analytics Dashboard",
-        excerpt: "A comprehensive dashboard for real-time financial monitoring. Featuring interactive charts, data visualization, and predictive modeling for better investment decisions.",
-        image: "/images/projects/project-1.png",
-        slug: "financial-analytics"
-    },
-    {
-        title: "The Digital Library",
-        excerpt: "An immersive digital reading experience designed to bring the joy of physical libraries to the web. Focus on typography, accessibility, and discovery.",
-        image: "/images/projects/project-2.png",
-        slug: "digital-library"
-    },
-    {
-        title: "Mindfulness App",
-        excerpt: "A mobile-first application dedicated to mental wellness and daily meditation. Clean interface with calming aesthetics to promote daily usage habits.",
-        image: "/images/projects/project-3.png",
-        slug: "mindfulness-app"
+        title: "Petri Force",
+        excerpt: "An anti-impulse buying tool that gamifies financial discipline. It satisfies the psychological need to 'buy' with a high-fidelity mock purchase experience, acting as a buffer against impulse spending.",
+        image: "/images/projects/petri-force.png",
+        slug: "petri-force"
     }
 ];
 
