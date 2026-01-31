@@ -59,6 +59,16 @@
     padding-bottom: var(--spacing-2xl);
 }
 
+.emptyState {
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+    border: 1px dashed var(--border-color);
+    margin: 0 auto;
+    max-width: 600px;
+}
+
 @media (max-width: 768px) {
     .header {
         height: 35vh;
