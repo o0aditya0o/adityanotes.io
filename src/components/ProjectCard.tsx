@@ -9,15 +9,16 @@ interface ProjectCardProps {
     slug: string;
     index: number;
     href?: string;
+    variant?: 'landscape' | 'portrait';
 }
 
-export default function ProjectCard({ title, excerpt, image, slug, index, href }: ProjectCardProps) {
+export default function ProjectCard({ title, excerpt, image, slug, index, href, variant = 'landscape' }: ProjectCardProps) {
     const isEven = index % 2 === 0;
     const linkPath = href || `/projects/${slug}`;
 
     return (
         <Link href={linkPath} className={`${styles.card} ${!isEven ? styles.cardReverse : ''}`}>
-            <div className={styles.imageWrapper}>
+            <div className={`${styles.imageWrapper} ${variant === 'portrait' ? styles.imageWrapperPortrait : ''}`}>
                 <Image
                     src={image}
                     alt={title}

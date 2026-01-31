@@ -31,6 +31,14 @@
     /* remove excessive shadows, keep it flat */
 }
 
+.imageWrapperPortrait {
+    aspect-ratio: 2 / 3;
+    max-width: 300px;
+    /* Don't let portrait images get too massive */
+    margin: 0 auto;
+    /* Center it if it's smaller than the container */
+}
+
 /* Optional: Add a 'glitch' or scanline effect on hover for images? */
 .image {
     object-fit: cover;
