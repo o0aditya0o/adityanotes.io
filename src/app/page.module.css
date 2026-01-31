@@ -6,16 +6,43 @@
 }
 
 .hero {
-    text-align: left;
-    /* Align left for terminal feel */
     margin-bottom: var(--spacing-2xl);
     padding: var(--spacing-xl) 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 800px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.profileSection {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+}
+
+.profileImageWrapper {
+    flex-shrink: 0;
+    border: 1px solid var(--text-tertiary);
+    padding: 4px;
+    border-radius: 50%;
+    /* Circle profile */
+    width: 220px;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(74, 222, 128, 0.05);
+    /* Very subtle green tint */
+}
+
+.profileImage {
+    border-radius: 50%;
+    object-fit: cover;
+    /* Removed filter to show natural colors */
+    transition: filter 0.3s ease;
+}
+
+.profileImageWrapper:hover .profileImage {
+    filter: grayscale(0%);
 }
 
 .terminalPrompt {
@@ -120,6 +147,17 @@
     .hero {
         padding: var(--spacing-lg) 0;
         margin-bottom: var(--spacing-xl);
+    }
+
+    .profileSection {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+
+    .terminalPrompt {
+        justify-content: center;
     }
 
     .heroTitle {

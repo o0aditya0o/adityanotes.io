@@ -35,8 +35,7 @@
 .image {
     object-fit: cover;
     transition: transform 0.6s var(--transition-ease), opacity 0.3s;
-    filter: grayscale(80%) sepia(20%) hue-rotate(90deg) brightness(0.8);
-    /* Matrix-y filter */
+    /* Removed matrix filter */
 }
 
 .card:hover .image {
