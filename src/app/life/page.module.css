@@ -78,3 +78,18 @@
         font-size: var(--font-size-2xl);
     }
 }
+
+.sectionsGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+    .sectionsGrid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+}

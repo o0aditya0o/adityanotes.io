@@ -52,7 +52,7 @@ export default function Home() {
       </section>
 
       <section className={styles.sectionsGrid}>
-        <div style={{ gridColumn: 'span 7' }}>
+        <div style={{ gridColumn: 'span 4' }}>
           <SectionCard
             title="On Work"
             description="Engineering structure, teams, and leverage."
@@ -61,7 +61,7 @@ export default function Home() {
             link="/work"
           />
         </div>
-        <div style={{ gridColumn: 'span 5' }}>
+        <div style={{ gridColumn: 'span 4' }}>
           <SectionCard
             title="On Life"
             description="Balance & perspective."
@@ -70,16 +70,7 @@ export default function Home() {
             link="/life"
           />
         </div>
-        <div style={{ gridColumn: 'span 6' }}>
-          <SectionCard
-            title="On Books"
-            description="Notes on what I'm reading."
-            color="books"
-            icon=""
-            link="/books"
-          />
-        </div>
-        <div style={{ gridColumn: 'span 6' }}>
+        <div style={{ gridColumn: 'span 4' }}>
           <SectionCard
             title="On Projects"
             description="Selected work and experiments."

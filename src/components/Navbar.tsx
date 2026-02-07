@@ -24,7 +24,7 @@ export default function Navbar() {
                     <li>
                         <Link
                             href="/"
-                            className={isActive('/') && !pathname.includes('/work') && !pathname.includes('/life') && !pathname.includes('/books') ? styles.active : ''}
+                            className={isActive('/') && !pathname.includes('/work') && !pathname.includes('/life') ? styles.active : ''}
                         >
                             Home
                         </Link>
@@ -45,14 +45,7 @@ export default function Navbar() {
                             Life
                         </Link>
                     </li>
-                    <li>
-                        <Link
-                            href="/books"
-                            className={isActive('/books') ? styles.active : ''}
-                        >
-                            Books
-                        </Link>
-                    </li>
+
                     <li>
                         <Link
                             href="/projects"

@@ -1,6 +1,4 @@
-import Link from 'next/link';
-import ProjectCard from '@/components/ProjectCard';
-import { posts } from '@/data/posts';
+import SectionCard from '@/components/SectionCard';
 import styles from './page.module.css';
 
 export default function LifePage() {
@@ -16,9 +14,33 @@ export default function LifePage() {
                 </div>
             </header>
 
-            <div className={`container ${styles.postsList}`}>
-                <div className={styles.emptyState}>
-                    <p>Coming Soon...</p>
+            <div className={`container ${styles.sectionsGrid}`}>
+                <div style={{ gridColumn: 'span 6' }}>
+                    <SectionCard
+                        title="On Books"
+                        description="Notes on what I'm reading."
+                        color="books"
+                        icon=""
+                        link="/books"
+                    />
+                </div>
+                <div style={{ gridColumn: 'span 6' }}>
+                    <SectionCard
+                        title="On Piano"
+                        description="My journey learning jazz piano."
+                        color="life"
+                        icon=""
+                        link="/piano"
+                    />
+                </div>
+                <div style={{ gridColumn: 'span 6' }}>
+                    <SectionCard
+                        title="On Coffee"
+                        description="Brewing methods and bean reviews."
+                        color="work"
+                        icon=""
+                        link="/coffee"
+                    />
                 </div>
             </div>
         </main>
