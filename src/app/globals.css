@@ -128,7 +128,6 @@ a {
 
 a:hover {
   color: var(--text-tertiary);
-  text-decoration: underline;
 }
 
 /* ========== Layout Utilities ========== */

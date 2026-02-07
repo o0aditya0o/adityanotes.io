@@ -35,7 +35,6 @@
 
 .socialLinks a:hover {
     color: var(--text-tertiary);
-    text-decoration: underline;
 }
 
 /* Responsive */
