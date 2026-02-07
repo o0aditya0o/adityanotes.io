@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { posts } from '@/data/posts';
 import { postContent } from '@/content';
+import Newsletter from '@/components/Newsletter';
 import styles from './page.module.css';
 
 interface PageProps {
@@ -81,6 +82,8 @@ export default async function PostPage({ params }: PageProps) {
                         </>
                     )}
                 </div>
+
+                <Newsletter />
             </article>
         </div>
     );

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import SectionCard from '@/components/SectionCard';
+import Newsletter from '@/components/Newsletter';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -88,6 +89,8 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <Newsletter />
     </div>
   );
 }
