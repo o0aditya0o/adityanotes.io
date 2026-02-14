@@ -27,7 +27,7 @@ export default function LifePage() {
                 <div style={{ gridColumn: 'span 6' }}>
                     <SectionCard
                         title="On Piano"
-                        description="My journey learning jazz piano."
+                        description="My journey learning piano."
                         color="life"
                         icon=""
                         link="/piano"
