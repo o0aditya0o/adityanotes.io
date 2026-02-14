@@ -5,7 +5,7 @@ const projects = [
     {
         title: "Petri Force",
         excerpt: "An anti-impulse buying tool that gamifies financial discipline. It satisfies the psychological need to 'buy' with a high-fidelity mock purchase experience, acting as a buffer against impulse spending.",
-        image: "/images/projects/petri-force.png",
+        image: "/images/projects/petri-force.jpg",
         slug: "petri-force"
     }
 ];
