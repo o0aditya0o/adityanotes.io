@@ -6,6 +6,7 @@ import ConfusionBeforeClarity from './ConfusionBeforeClarity';
 import SchoolOfLife from './SchoolOfLife';
 import FourThousandWeeks from './FourThousandWeeks';
 import StatQuestML from './StatQuestML';
+import TheDarkForest from './TheDarkForest';
 
 export const postContent: Record<string, ReactNode> = {
     'borrowed-glasses-dont-fit': <BorrowedGlasses />,
@@ -15,4 +16,5 @@ export const postContent: Record<string, ReactNode> = {
     'school-of-life': <SchoolOfLife />,
     'four-thousand-weeks': <FourThousandWeeks />,
     'statquest-ml-guide': <StatQuestML />,
+    'the-dark-forest': <TheDarkForest />,
 };

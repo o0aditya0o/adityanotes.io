@@ -54,7 +54,14 @@ export const posts: BlogPost[] = [
     },
 
     // Books posts
-    // Books posts
+    {
+        slug: 'the-dark-forest',
+        title: 'The Dark Forest',
+        date: 'April 2026',
+        excerpt: 'The sequel to the bestselling novel The Three-Body Problem by Cixin Liu.',
+        category: 'books',
+        coverImage: '/images/books/the-dark-forest.jpg',
+    },
     {
         slug: 'school-of-life',
         title: 'The School of Life: An Emotional Education',
