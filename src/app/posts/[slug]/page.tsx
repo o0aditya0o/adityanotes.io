@@ -30,6 +30,7 @@ export default async function PostPage({ params }: PageProps) {
         life: 'var(--color-life)',
         books: 'var(--color-books)',
         piano: 'var(--color-piano)',
+        coffee: 'var(--color-coffee)',
     }[post.category];
 
     return (

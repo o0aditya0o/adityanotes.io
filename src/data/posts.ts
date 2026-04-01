@@ -96,4 +96,14 @@ export const posts: BlogPost[] = [
         category: 'piano',
         coverImage: '/images/piano/canon-in-d.png',
     },
+
+    // Coffee posts
+    {
+        slug: 'pour-over',
+        title: 'The Ritual of Pour-Over Coffee',
+        date: 'April 2026',
+        excerpt: 'Exploring the purity, variables, and process behind making the perfect pour-over coffee.',
+        category: 'coffee',
+        coverImage: '/images/coffee/pour-over.jpg',
+    },
 ];
