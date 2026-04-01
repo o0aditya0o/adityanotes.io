@@ -86,4 +86,14 @@ export const posts: BlogPost[] = [
         category: 'books',
         coverImage: '/images/books/statquest-ml.jpg',
     },
+
+    // Piano posts
+    {
+        slug: 'canon-in-d',
+        title: 'Canon in D Major - Johann Pachelbel',
+        date: 'April 2026',
+        excerpt: 'An exploration of the music theory and the timeless chord progression behind Pachelbel\'s Canon in D.',
+        category: 'piano',
+        coverImage: '/images/piano/canon-in-d.png',
+    },
 ];

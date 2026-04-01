@@ -6,13 +6,13 @@ export interface BlogPost {
     title: string;
     date: string;
     excerpt: string;
-    category: 'work' | 'life' | 'books';
+    category: 'work' | 'life' | 'books' | 'piano';
     coverImage?: string;
 }
 
 interface BlogPostListProps {
     posts: BlogPost[];
-    category: 'work' | 'life' | 'books';
+    category: 'work' | 'life' | 'books' | 'piano';
 }
 
 export default function BlogPostList({ posts, category }: BlogPostListProps) {

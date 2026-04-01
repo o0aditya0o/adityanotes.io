@@ -7,6 +7,7 @@ import SchoolOfLife from './SchoolOfLife';
 import FourThousandWeeks from './FourThousandWeeks';
 import StatQuestML from './StatQuestML';
 import TheDarkForest from './TheDarkForest';
+import CanonInD from './CanonInD';
 
 export const postContent: Record<string, ReactNode> = {
     'borrowed-glasses-dont-fit': <BorrowedGlasses />,
@@ -17,4 +18,5 @@ export const postContent: Record<string, ReactNode> = {
     'four-thousand-weeks': <FourThousandWeeks />,
     'statquest-ml-guide': <StatQuestML />,
     'the-dark-forest': <TheDarkForest />,
+    'canon-in-d': <CanonInD />,
 };
