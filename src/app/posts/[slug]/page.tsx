@@ -28,8 +28,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     const title = post.title;
     const description = post.excerpt.trim();
-    const url = `/posts/${post.slug}`;
-    const coverImage = post.coverImage || '/images/me.png';
+    const siteUrl = 'https://www.adityanotes.com';
+    const postUrl = `${siteUrl}/posts/${post.slug}`;
+    const relativeImage = post.coverImage || '/images/og-default.jpg';
+    const absoluteImageUrl = relativeImage.startsWith('http')
+        ? relativeImage
+        : `${siteUrl}${relativeImage}`;
+    const imageType = relativeImage.endsWith('.png') ? 'image/png' : 'image/jpeg';
 
     let publishedTime: string | undefined;
     try {
@@ -45,12 +50,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title: title,
         description: description,
         alternates: {
-            canonical: url,
+            canonical: postUrl,
         },
         openGraph: {
             title: `${title} | Aditya Notes`,
             description: description,
-            url: url,
+            url: postUrl,
             siteName: 'Aditya Notes',
             locale: 'en_US',
             type: 'article',
@@ -59,8 +64,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             section: post.category,
             images: [
                 {
-                    url: coverImage,
+                    url: absoluteImageUrl,
+                    secureUrl: absoluteImageUrl,
+                    width: 1200,
+                    height: 630,
                     alt: title,
+                    type: imageType,
                 },
             ],
         },
@@ -68,7 +77,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             card: 'summary_large_image',
             title: `${title} | Aditya Notes`,
             description: description,
-            images: [coverImage],
+            images: [absoluteImageUrl],
         },
     };
 }

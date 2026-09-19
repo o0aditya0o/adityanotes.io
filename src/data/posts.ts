@@ -6,7 +6,7 @@ export const posts: BlogPost[] = [
         slug: 'six-years-at-google',
         title: 'Googleversary reflections',
         date: 'September 19, 2026',
-        excerpt: ' I recently completed six years at Google and wanted to pen down the things that I have learnt. Not an exhaustive list in any way but 5 things that came most easily to my mind while writing this.',
+        excerpt: 'I recently completed six years at Google and wanted to pen down the things that I have learnt. Not an exhaustive list in any way but 5 things that came most easily to my mind while writing this.',
         category: 'work',
         coverImage: '/images/six-years-at-google.jpg',
     },
@@ -16,7 +16,7 @@ export const posts: BlogPost[] = [
         date: 'January 26, 2026',
         excerpt: 'On first-principles thinking in careers, teams, and life. Why flawed opinions are better than borrowed ones.',
         category: 'work',
-        coverImage: '/images/borrowed-glasses.png',
+        coverImage: '/images/borrowed-glasses.jpg',
     },
     {
         slug: 'the-hedge-changes',
@@ -24,7 +24,7 @@ export const posts: BlogPost[] = [
         date: 'January 20, 2026',
         excerpt: 'On unlearning skill-as-safety and learning people-as-leverage.',
         category: 'work',
-        coverImage: '/images/the-hedge-changes.png',
+        coverImage: '/images/the-hedge-changes.jpg',
     },
     {
         slug: 'solve-for-motivation',
@@ -32,7 +32,7 @@ export const posts: BlogPost[] = [
         date: 'January 14, 2026',
         excerpt: 'Why productivity is rarely the problem and motivation is the real engine.',
         category: 'work',
-        coverImage: '/images/solve-for-motivation.png',
+        coverImage: '/images/solve-for-motivation.jpg',
     },
     {
         slug: 'confusion-before-clarity',
@@ -40,7 +40,7 @@ export const posts: BlogPost[] = [
         date: 'January 07, 2026',
         excerpt: 'Why rushing to clarity often leads to poor decisions, and the value of sitting with confusion.',
         category: 'work',
-        coverImage: '/images/confusion-before-clarity.png',
+        coverImage: '/images/confusion-before-clarity.jpg',
     },
 
     // Life posts

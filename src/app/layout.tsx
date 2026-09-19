@@ -23,7 +23,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://adityanotes.io'),
+  metadataBase: new URL('https://www.adityanotes.com'),
   title: {
     default: "Aditya Notes — Work, Life, Books, & Projects",
     template: "%s | Aditya Notes",
@@ -34,16 +34,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://adityanotes.io",
+    url: "https://www.adityanotes.com",
     siteName: "Aditya Notes",
     title: "Aditya Notes — Work, Life, Books, & Projects",
     description: "A minimal space for ideas, reflections, and experiments.",
     images: [
       {
-        url: "/images/me.png",
+        url: "/images/og-default.jpg",
+        secureUrl: "https://www.adityanotes.com/images/og-default.jpg",
         width: 800,
         height: 800,
         alt: "Aditya Notes",
+        type: "image/jpeg",
       },
     ],
   },
@@ -51,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aditya Notes — Work, Life, Books, & Projects",
     description: "A minimal space for ideas, reflections, and experiments.",
-    images: ["/images/me.png"],
+    images: ["https://www.adityanotes.com/images/og-default.jpg"],
   },
 };
 
