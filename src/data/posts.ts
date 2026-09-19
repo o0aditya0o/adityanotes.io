@@ -3,6 +3,14 @@ import { BlogPost } from '@/components/BlogPostList';
 export const posts: BlogPost[] = [
     // Work posts
     {
+        slug: 'six-years-at-google',
+        title: 'Googleversay reflections',
+        date: 'September 19, 2026',
+        excerpt: ' I recently completed six years at Google and wanted to pen down the things that I have learnt. Not a exhaustive list in any way but 5 things that came most easily to my mind while writing this.',
+        category: 'work',
+        coverImage: '/images/six-years-at-google.jpg',
+    },
+    {
         slug: 'borrowed-glasses-dont-fit',
         title: "Borrowed Glasses Don't Fit",
         date: 'January 26, 2026',

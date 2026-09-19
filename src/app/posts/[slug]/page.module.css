@@ -62,15 +62,12 @@
     margin-bottom: var(--spacing-lg);
     border-radius: var(--border-radius-sm);
     overflow: hidden;
-    /* Optional: Limit height if images are too tall, 
-       but minimal style might want them full */
-    max-height: 400px;
 }
 
 .coverImage {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     display: block;
 }
 
@@ -184,6 +181,6 @@
     }
 
     .coverImageWrapper {
-        max-height: 250px;
+        max-height: none;
     }
 }

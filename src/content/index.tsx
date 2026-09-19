@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import SixYearsAtGoogle from './SixYearsAtGoogle';
 import BorrowedGlasses from './BorrowedGlasses';
 import TheHedgeChanges from './TheHedgeChanges';
 import SolveForMotivation from './SolveForMotivation';
@@ -11,6 +12,7 @@ import CanonInD from './CanonInD';
 import PourOver from './PourOver';
 
 export const postContent: Record<string, ReactNode> = {
+    'six-years-at-google': <SixYearsAtGoogle />,
     'borrowed-glasses-dont-fit': <BorrowedGlasses />,
     'the-hedge-changes': <TheHedgeChanges />,
     'solve-for-motivation': <SolveForMotivation />,
