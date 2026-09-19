@@ -23,8 +23,36 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Aditya Notes - Work, Life, Books, & Projects",
+  metadataBase: new URL('https://adityanotes.io'),
+  title: {
+    default: "Aditya Notes — Work, Life, Books, & Projects",
+    template: "%s | Aditya Notes",
+  },
   description: "A minimal space for ideas, reflections, and experiments.",
+  authors: [{ name: "Aditya" }],
+  creator: "Aditya",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://adityanotes.io",
+    siteName: "Aditya Notes",
+    title: "Aditya Notes — Work, Life, Books, & Projects",
+    description: "A minimal space for ideas, reflections, and experiments.",
+    images: [
+      {
+        url: "/images/me.png",
+        width: 800,
+        height: 800,
+        alt: "Aditya Notes",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aditya Notes — Work, Life, Books, & Projects",
+    description: "A minimal space for ideas, reflections, and experiments.",
+    images: ["/images/me.png"],
+  },
 };
 
 import StarryBackground from "@/components/StarryBackground";

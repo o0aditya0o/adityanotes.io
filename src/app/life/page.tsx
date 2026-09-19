@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import SectionCard from '@/components/SectionCard';
 import styles from './page.module.css';
+
+export const metadata: Metadata = {
+    title: 'On Life',
+    description: 'Reflections on productivity, balance, and navigating the modern world.',
+    openGraph: {
+        title: 'On Life | Aditya Notes',
+        description: 'Reflections on productivity, balance, and navigating the modern world.',
+        url: '/life',
+    },
+};
 
 export default function LifePage() {
     return (

@@ -1,5 +1,16 @@
+import type { Metadata } from 'next';
 import ProjectCard from '@/components/ProjectCard';
 import styles from './page.module.css';
+
+export const metadata: Metadata = {
+    title: 'Selected Projects',
+    description: 'A collection of digital products, experiments, and ideas brought to life.',
+    openGraph: {
+        title: 'Selected Projects | Aditya Notes',
+        description: 'A collection of digital products, experiments, and ideas brought to life.',
+        url: '/projects',
+    },
+};
 
 const projects = [
     {

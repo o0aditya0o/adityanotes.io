@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { posts } from '@/data/posts';
@@ -13,6 +14,63 @@ export async function generateStaticParams() {
     return posts.map((post) => ({
         slug: post.slug,
     }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const post = posts.find((p) => p.slug === slug);
+
+    if (!post) {
+        return {
+            title: 'Post Not Found',
+        };
+    }
+
+    const title = post.title;
+    const description = post.excerpt.trim();
+    const url = `/posts/${post.slug}`;
+    const coverImage = post.coverImage || '/images/me.png';
+
+    let publishedTime: string | undefined;
+    try {
+        const d = new Date(post.date);
+        if (!isNaN(d.getTime())) {
+            publishedTime = d.toISOString();
+        }
+    } catch {
+        // ignore parse error
+    }
+
+    return {
+        title: title,
+        description: description,
+        alternates: {
+            canonical: url,
+        },
+        openGraph: {
+            title: `${title} | Aditya Notes`,
+            description: description,
+            url: url,
+            siteName: 'Aditya Notes',
+            locale: 'en_US',
+            type: 'article',
+            publishedTime: publishedTime,
+            authors: ['Aditya'],
+            section: post.category,
+            images: [
+                {
+                    url: coverImage,
+                    alt: title,
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: `${title} | Aditya Notes`,
+            description: description,
+            images: [coverImage],
+        },
+    };
 }
 
 export default async function PostPage({ params }: PageProps) {
